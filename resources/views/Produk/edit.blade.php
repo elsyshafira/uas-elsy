@@ -1,0 +1,33 @@
+@extends('layouts.app')
+@section('content')
+    <div class="container">
+        <h3>EDIT DATA Produk</h3>
+        <form action="{{ url('/produk/' .$row->produk_id)}}" method="post">
+            @method('PATCH')
+            @csrf
+            <div class="mb-3">
+                <label for="">KODE</label>
+                <input type="text" name="produk_no" class="form-control" value="{{$row->produk_no}}">
+            </div>
+            <div class="mb-3">
+                <label for="">NAMA</label>
+                <input type="text" name="produk_nama" class="form-control" value="{{$row->produk_nama}}">
+            </div>
+            <div class="mb-3">
+                <label for="">HARGA</label>
+                <input type="text" name="produk_harga" class="form-control" value="{{$row->produk_harga}}">
+            </div>
+            <div class="mb-3">
+                <label for="">STOK</label>
+                <input type="text" name="produk_stok" class="form-control" value="{{$row->produk_stok}}">
+            </div>
+            <div class="mb-3">
+                <label for="">KETERANGAN</label>
+                <input type="text" name="produk_keterangan" class="form-control" value="{{$row->produk_keterangan}}">
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-success" type="submit" name="" id="" value="UPDATE">
+            </div>
+        </form>
+    </div>
+@endsection
